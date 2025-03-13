@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+// Define your routes here
 router.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Contacts Home');
 });
-
-router.use('/contacts', require('./contacts'));
 
 module.exports = router;

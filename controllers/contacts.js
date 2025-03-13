@@ -4,17 +4,17 @@ const objectId = require('mongodb').ObjectId;
  
 const getAll=async(req,res)=>{
  
-    const result = await mongodb.getDB().db().collection('contacts').find();
+    const result = await mongodb.getDatabase().db().collection('contacts').find();
     result.toArray().then((contacts)=>{
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(contacs);
+        res.status(200).json(contacts);
     });
 };
  
  
 const getSingle=async(req,res)=>{
     const userId=new ObjectId(req.params.id);
-    const result = await mongodb.getDB().db().collection('users').find({ _id: userId });
+    const result = await mongodb.getDB().db().collection('contacts').find({ _id: userId });
     result.toArray().then((contacts)=>{
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts);
