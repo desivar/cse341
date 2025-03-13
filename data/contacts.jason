@@ -1,0 +1,41 @@
+Sure! Here's an example of a JSON file containing contact information:
+
+{
+  "contacts": [
+    {
+      "name": "Alice Johnson",
+      "phone": "+1-555-1234",
+      "email": "alice.johnson@example.com",
+      "address": {
+        "street": "123 Maple Street",
+        "city": "Springfield",
+        "state": "IL",
+        "postalCode": "62701"
+      }
+    },
+    {
+      "name": "Bob Smith",
+      "phone": "+1-555-5678",
+      "email": "bob.smith@example.com",
+      "address": {
+        "street": "456 Oak Avenue",
+        "city": "Metropolis",
+        "state": "NY",
+        "postalCode": "10001"
+      }
+    },
+    {
+      "name": "Carol White",
+      "phone": "+1-555-8765",
+      "email": "carol.white@example.com",
+      "address": {
+        "street": "789 Pine Road",
+        "city": "Gotham",
+        "state": "NJ",
+        "postalCode": "07001"
+      }
+    }
+  ]
+}
+
+
