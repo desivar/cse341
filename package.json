@@ -6,5 +6,23 @@
   },
   "devDependencies": {
     "swagger-autogen": "^2.23.7"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "cse341",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desivar/cse341.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desivar/cse341/issues"
+  },
+  "homepage": "https://github.com/desivar/cse341#readme",
+  "description": ""
 }
