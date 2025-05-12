@@ -1,9 +1,9 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-const { MongoClient } = require('mongo').MongoClient;
+const { MongoClient } = require('mongodb'); // Corrected import
 
-let _db;
+let database; // Changed _db to database for consistency with the rest of the code
 
 const initDb = callback => {
     if (database) {
@@ -18,15 +18,16 @@ const initDb = callback => {
         .catch(err => {
             callback(err);
         });
-    };
-    const getDatabase = () => {
-        if (!database) {
-            throw new Error('Database not initialized');
-        
-        }
-        return database;
+};
+
+const getDatabase = () => {
+    if (!database) {
+        throw new Error('Database not initialized');
     }
-    module.exports = {
-        initDb,
-        getDatabase
-    };
+    return database;
+};
+
+module.exports = {
+    initDb,
+    getDatabase
+};
