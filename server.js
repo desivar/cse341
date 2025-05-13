@@ -16,6 +16,8 @@ const contactsRoutes = require('./routes/contacts');
 app.use('/', routes);
 app.use('/contacts', contactsRoutes); // Add this line to connect contacts router
 
+console.log('Connecting to MongoDB with URL:', process.env.MONGODB_URL); // <--- ADD THIS LINE HERE
+
 // Initialize database and start server
 mongodb.initDb((err) => {
   if (err) {
