@@ -6,7 +6,7 @@
 
 - Installed Node.js and npm
 - Initialized project with `npm init`
-- Created basic `index.js` with an Express server
+- Created basic `server.js` with an Express server
 
 ### 🧪 Individual Activity
 
@@ -25,7 +25,7 @@
 - Improved endpoint responses
 - Added documentation for each route
 
-### 🚀 Final Submission
+### 🚀  Week 01-Final Submission
 
 - [Live API on Render](https://cse341-v3b9.onrender.com/)
 - [Contacts API Endpoint](https://cse341-v3b9.onrender.com/contacts)
