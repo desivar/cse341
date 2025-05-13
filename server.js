@@ -12,11 +12,10 @@ app.use(express.urlencoded({ extended: true }));
 const routes = require('./routes');
 const contactsRoutes = require('./routes/contacts');
 
-// Use routes
 app.use('/', routes);
-app.use('/contacts', contactsRoutes); // Add this line to connect contacts router
+app.use('/contacts', contactsRoutes);
 
-console.log('Connecting to MongoDB with URL:', process.env.MONGODB_URL); // <--- ADD THIS LINE HERE
+console.log('All Environment Variables:', process.env); // <--- ADD THIS LINE HERE
 
 // Initialize database and start server
 mongodb.initDb((err) => {
