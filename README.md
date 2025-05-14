@@ -25,10 +25,14 @@
 - Improved endpoint responses
 - Added documentation for each route
 
-### 🚀  Week 01-Final Submission
+### 🚀  Week 01- Submission (Details)
 
 - [Live API on Render](https://cse341-v3b9.onrender.com/)
 - [Contacts API Endpoint](https://cse341-v3b9.onrender.com/contacts)
 - [Contact Details](https://cse341-v3b9.onrender.com/contacts/67d3b0be74022c5eccc180cf)
 
 - [GitHub Repository](https://github.com/desivar/cse341)
+
+### 🚀  Week 02-Final Submission
+
+-
