@@ -26,7 +26,7 @@ const createContact = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday,
   };
-  const response = await mongodb.getDb().db().collection('contacts').replaceOne(_id:contactId}, contact);
+  const response = await mongodb.getDb().db().collection('contacts').replaceOne({ _id: contactId }, contact);
   if (response.modifiedCount > 0) {
     
     res.status(204).send();
@@ -34,7 +34,7 @@ const createContact = async (req, res) => {
   else{
     res.status(500).json(response.error || 'Some error occurred while updating the contact.');
   }
-
+};
 module.exports = {
   getAll,
   getSingle,
