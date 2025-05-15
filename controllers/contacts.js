@@ -33,7 +33,18 @@ const getSingle = async (req, res) => {
   }
 };
 
+
+const createContact = async (req, res) => {
+const { firstName, lastName, email, favoriteColor, birthday } = req.body;
+
+}
+
 module.exports = {
+
+
   getAll,
-  getSingle
+  getSingle,
+  createContact,
+  updateContact,
+  deleteContact
 };
