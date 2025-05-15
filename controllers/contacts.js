@@ -40,5 +40,5 @@ module.exports = {
   getSingle,
   createContact,
   updateContact,
-  this.deleteContact,
+  deleteContact,
 } 
