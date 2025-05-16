@@ -22,9 +22,9 @@ PUT http://localhost:5500/contacts/67d3b0be74022c5eccc180cf HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Karl",
-    "last name": "Doe",
-    "email": "karld@gmail.com",
+  "name": "Carol",
+    "last name": "Williams",
+     "email":"carol.williams@example.com",
     "favoriteColor": "white",
     "birthday":"1978-08-28"
 }
