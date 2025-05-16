@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
 const app = express();
 
@@ -14,7 +15,7 @@ const contactsRoutes = require('./routes/contacts');
 
 app.use('/', routes);
 app.use('/contacts', contactsRoutes);
-app.use(bodypaser.json());
+app.use(bodyParser.json());
 
 console.log('All Environment Variables:', process.env); // <--- ADD THIS LINE HERE
 
