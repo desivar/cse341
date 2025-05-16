@@ -2,7 +2,7 @@ const mongodb = require('../data/database');
 const Objectid=require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-  const result=await mongodb.getDb().db().collection('contacts').find();
+  const result=await mongodb.getDatabase().db().collection('contacts').find();
   result.toArray().then((contacts) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(contacts);
@@ -11,7 +11,7 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   const contactId = new Objectid(req.params.id);
-  const result = await mongodb.getDb().db().collection('contacts').findOne({ _id: contactId });
+  const result = await mongodb.getDatabase().db().collection('contacts').findOne({ _id: contactId });
   if (result) {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(result);
@@ -28,7 +28,7 @@ const createContact = async (req, res) => {
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday,
   };
-  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  const response = await mongodb.getDatabase().db().collection('contacts').insertOne(contact);
   if (response.acknowledged) {
     res.status(201).json(response.insertedId); // Respond with the ID of the newly created contact
   } else {
