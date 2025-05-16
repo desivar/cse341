@@ -11,28 +11,28 @@ const getAll = async (req, res) => {
 
 const getSingle = async (req, res) => {
   const contactId = new Objectid(req.params.id);
-  const respond = await mongodb.getDb().db().collection('contacts').insertone({contact });
-  result.toArray().then((contacts) => {
+  const result = await mongodb.getDb().db().collection('contacts').findOne({ _id: contactId });
+  if (result) {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(contacts[0]);
-  });
+    res.status(200).json(result);
+  } else {
+    res.status(404).json({ message: 'Contact not found' });
+  }
 };
+
 const createContact = async (req, res) => {
-  const userId= new Objectid(req.params.id);
   const contact = {
-    firstNme: req.body.firstName,
-    lastNme: req.body.lastName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday,
   };
-  const response = await mongodb.getDb().db().collection('contacts').replaceOne({ _id: contactId }, contact);
-  if (response.modifiedCount > 0) {
-    
-    res.status(204).send();
-  }
-  else{
-    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response.insertedId); // Respond with the ID of the newly created contact
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
   }
 };
 
@@ -44,15 +44,16 @@ const updateContact = async (req, res) => {
     email: req.body.email,
     favoriteColor: req.body.favoriteColor,
     birthday: req.body.birthday,
-  }
-  const response = await mongodb.getDb().db().collection('contacts')..replaceOne({ _id: contactId }, contact);
+  };
+  const response = await mongodb.getDb().db().collection('contacts').updateOne({ _id: contactId }, { $set: contact }); // Use updateOne with $set to update specific fields
   if (response.modifiedCount > 0) {
     res.status(204).send();
-  }
-  else {
-    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+  } else {
+    res.status(500).json(response.error || 'Could not update contact or contact not found.');
   }
 };
+
+
 const deleteContact = async (req, res) => {
   const contactId = new Objectid(req.params.id);
   const response = await mongodb.getDb().db().collection('contacts').remove({ _id:contactId }, true);
