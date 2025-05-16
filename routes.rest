@@ -1,5 +1,5 @@
 //local host
 //getall
-GET http://localhost:8080/contacts
+GET http://localhost:5500/contacts
 
-//get by id
+
