@@ -1,5 +1,7 @@
 //local host
 //getall
 GET http://localhost:5500/contacts
+//get one
+
 
 
