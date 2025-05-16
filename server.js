@@ -15,12 +15,13 @@ const contactsRoutes = require('./routes/contacts');
 
 app.use('/', routes);
 app.use('/contacts', contactsRoutes);
+app.use(bodyParser.json());
 
 
 console.log('All Environment Variables:', process.env); // <--- ADD THIS LINE HERE
 
 // Initialize database and start server
-mongodb.initDb((err) => {
+mongodb.initDatabase((err) => {
   if (err) {
     console.log('Error connecting to MongoDB:', err);
   } else {
