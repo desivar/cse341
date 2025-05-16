@@ -1,27 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongodb = require('./data/database');
+const { initDb } = require('./data/database'); // Correct import
 const app = express();
 
 const port = process.env.PORT || 5500;
 
-// Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Import routes
 const routes = require('./routes');
 const contactsRoutes = require('./routes/contacts');
 
 app.use('/', routes);
 app.use('/contacts', contactsRoutes);
-app.use(bodyParser.json());
-
-
-console.log('All Environment Variables:', process.env); // <--- ADD THIS LINE HERE
 
 // Initialize database and start server
-mongodb.initDatabase((err) => {
+initDb((err) => { // Correct function call: initDb instead of initDatabase
   if (err) {
     console.log('Error connecting to MongoDB:', err);
   } else {
