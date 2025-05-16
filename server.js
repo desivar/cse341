@@ -1,26 +1,23 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { initDb } = require('./data/database'); // Correct import
+const mongodb = require('./data/database');
 const app = express();
 
+// Use environment variable for the port if available, default to 8080
 const port = process.env.PORT || 8080;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// Middleware
+app.use(bodyParser.json());
+app.use('/', require('./routes'));
 
-const routes = require('./routes');
-const contactsRoutes = require('./routes/contacts');
-
-app.use('/', routes);
-app.use('/contacts', contactsRoutes);
-
-// Initialize database and start server
-initDb((err) => { // Correct function call: initDb instead of initDatabase
+// Initialize database and start the server
+mongodb.initDb((err) => {
   if (err) {
-    console.log('Error connecting to MongoDB:', err);
+    console.error('Error connecting to MongoDB:', err);
+    process.exit(1); // Exit process if DB connection fails
   } else {
     app.listen(port, () => {
-      console.log(`Server is running and database is connected. Listening on port ${port}`);
+      console.log(`Server is running on port ${port}`);
     });
   }
 });
