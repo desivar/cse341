@@ -15,7 +15,7 @@ const contactsRoutes = require('./routes/contacts');
 
 app.use('/', routes);
 app.use('/contacts', contactsRoutes);
-app.use(bodyParser.json());
+
 
 console.log('All Environment Variables:', process.env); // <--- ADD THIS LINE HERE
 
