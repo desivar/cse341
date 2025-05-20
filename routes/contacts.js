@@ -1,12 +1,17 @@
 const express = require('express');
 const router = express.Router();
-// Fix the path to the controller if needed
-const contactsController = require('..contacts/controllers/contacts');
+
+const contactsController = require('../controllers/contacts');
+const validation = require('../middleware/validate');
 
 router.get('/', contactsController.getAll);
+
 router.get('/:id', contactsController.getSingle);
-router.post('/', contactsController.createContact);
-router.put('/:id', contactsController.updateContact);
+
+router.post('/', validation.saveContact, contactsController.createContact);
+
+router.put('/:id', validation.saveContact, contactsController.updateContact);
+
 router.delete('/:id', contactsController.deleteContact);
 
 module.exports = router;
