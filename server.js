@@ -8,16 +8,27 @@ const port = process.env.PORT || 5500;
 
 // Middleware
 app.use(bodyParser.json());
-app.use('/', require('./routes'));
+app.use(req,res,next => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PUT, DELETE, OPTIONS"
+    );
+    next();
+});
 
-// Initialize database and start the server
+app.use('/',require('./routes'));
 mongodb.initDb((err) => {
-  if (err) {
-    console.error('Error connecting to MongoDB:', err);
-    process.exit(1); // Exit process if DB connection fails
-  } else {
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    });
-  }
+    if (err) {
+        console.log(err);
+    }
+    else {
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        });
+    }
 });
