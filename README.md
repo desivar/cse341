@@ -34,8 +34,8 @@
 - [GitHub Repository](https://github.com/desivar/cse341)
 
 ### 🚀  Week 02-Final Submission
--[Live API on Render](https://cse341-v3b9.onrender.com/)
--[Swagger ui](https://cse341-v3b9.onrender.com/api-docs/#/)
--[Git Hub repository]()
+- [Live API on Render](https://cse341-v3b9.onrender.com/)
+- [Swagger ui](https://cse341-v3b9.onrender.com/api-docs/#/)
+- [Git Hub repository](https://github.com/desivar/cse341/tree/main)
 
--
+
