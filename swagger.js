@@ -6,7 +6,7 @@ const doc = {
         description: 'API for managing contacts'
     },
     host: 'localhost:5500',
-    schemes: ['https', 'http'],
+    schemes: ['http', 'https'],
 };
 const outputFile = './swagger.json'; // Adjust the path as needed
 const endpointsFiles = ['./routes/index.js']; // Adjust the path to your routes file
