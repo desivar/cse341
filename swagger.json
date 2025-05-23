@@ -8,8 +8,8 @@
   "host": "localhost:5500",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {
