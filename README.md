@@ -34,12 +34,13 @@
 - [GitHub Repository](https://github.com/desivar/cse341)
 
 ### 🚀  Week 02-Final Submission
+
 - [Live API on Render](https://cse341-v3b9.onrender.com/)
 - [Swagger ui](https://cse341-v3b9.onrender.com/api-docs/#/)
 - [Git Hub repository](https://github.com/desivar/cse341/tree/main)
 
 - ![image]
-- (![Screenshot 2025-05-23 134529](https://github.com/user-attachments/assets/b7ece221-9528-4145-aac5-e9ccfd8f3835)
+- ([!alt text](image.png)]]()
 
 
 
