@@ -38,10 +38,4 @@
 - [Live API on Render](https://cse341-v3b9.onrender.com/)
 - [Swagger ui](https://cse341-v3b9.onrender.com/api-docs/#/)
 - [Git Hub repository](https://github.com/desivar/cse341/tree/main)
-
-- ![image]
-- ([!alt text](c:\Users\jilli\OneDrive\Documents\Desktop\Imágenes\Screenshots\Screenshot 2025-05-25 222318.png)]]()
-
-
-
-
+-![Project Image](c:\Users\jilli\OneDrive\Documents\Desktop\Imágenes\APIContacts.png c:\Users\jilli\OneDrive\Documents\Desktop\Imágenes\Screenshots\Screenshot 2025-05-25 222318.png)
