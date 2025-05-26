@@ -5,12 +5,10 @@
     "description": "API for managing contacts",
     "version": "1.0.0"
   },
-  "host": "localhost:5500",
-  "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
+ "host": "cse341-v3b9.onrender.com",
+"schemes": ["https"]
+,
+
   "paths": {
     "/": {
       "get": {
