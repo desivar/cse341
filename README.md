@@ -40,7 +40,7 @@
 - [Git Hub repository](https://github.com/desivar/cse341/tree/main)
 
 - ![image]
-- ([!alt text](image.png)]]()
+- ([!alt text](c:\Users\jilli\OneDrive\Documents\Desktop\Imágenes\Screenshots\Screenshot 2025-05-25 222318.png)]]()
 
 
 
